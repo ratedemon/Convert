@@ -6,16 +6,16 @@ $('.btnN1').on('click', function(){
 	// $('.flipper').css('transform', 'rotateY(-180deg)');
 	var t = setTimeout(function(){
 		$('.block__mouse').addClass('tongue');
-	}, 800);
+	}, 1100);
 	var q = setTimeout(function(){
 		$('.flipper').addClass('slope');
-	}, 1900);
-	var w = setTimeout(function(){
-		$('.flipper').addClass('slope');
-	}, 1900);
-	// var e = setTimeout(function(){
-	// 	$('.main__image').addClass('main__image_target');
-	// }, 3000);
+	}, 2500);
+	var e = setTimeout(function(){
+		$('.main__image').addClass('main__image_target');
+	}, 3100);
+	var y = setTimeout(function(){
+		$('.main__image_target').addClass('main__image_finish');
+	}, 4500);
 	var r = setTimeout(function(){
 		$('.flipper').addClass('slope__finish');
 	}, 5200);
@@ -31,6 +31,9 @@ $('.btnN2').on('click', function(){
 // $('.flipper').on('transitionend', function(){
 // 	$(this).addClass('slope');
 // })
+$('main__image_target').on('transitionend', function(){
+	$(this).addClass('main__image_finish');
+})
 
 $('.btnN4').on('click', function(){
 	$('.flipper').addClass('slope__finish');
