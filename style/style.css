@@ -1,0 +1,287 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	padding: 10% 0;
+}
+.container {
+  text-align: center;
+  width: 500px;
+	height: 332px;
+  margin: 100px auto;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -moz-transform: perspective(1000px);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d; 
+  transform-style: preserve-3d;
+}
+.flipper {
+  position: relative;
+ 	width: 500px;
+	height: 332px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+    -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  transform-origin: 50% 50%;
+    -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  -moz-transform: perspective(1000px);
+  perspective-origin: center bottom
+} 
+.front, .back {
+  font-family: 'Cabin', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.front {
+  z-index: 5;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  background-image: url(../img/envelope-front.png);
+}
+.back {
+  z-index: 10;
+  position: relative;
+  /*overflow: hidden;*/
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  background-image: url(../img/envelope-front-back.png);
+  transition: all .6s ease;
+}
+.back__block{
+  z-index: 4;
+  position: relative;
+  -webkit-perspective: 1200;
+  perspective: 1200;
+  -moz-transform: perspective(1200px);
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/envelope-back.png);
+	-webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all .6s ease;
+}
+
+.block__mouse{
+  /*display: none;*/
+  z-index: 2;
+  height: 100%;
+  position: relative;
+  transform-origin: top;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  transition: all .7 ease;
+
+
+/*
+  animation: flapToDawn 2s linear initial 1 initial;
+  animation-play-state: paused;*/
+}
+.back_in, .front_in{
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+  /*z-index: 5;*/
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  /*
+  transform-style: preserve-3d;*/
+/*  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);*/
+   -webkit-transition: .7s linear;
+  -moz-transition: .7s linear;
+  -o-transition: .7s linear;
+  transition: .7s linear;
+  transform-origin: top;
+  transition: all .6s ease;
+}
+.back_in{
+	-webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.front_in{
+	top: -50%;
+	-webkit-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+  transform-origin: bottom;
+}
+
+
+/*Поворот коверта*/
+/*.container:hover .flipper {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}*/
+.rotatetion {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+/*Открыте конверта*/
+/*.back__block:hover .block__mouse{
+  -webkit-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+  transition: all .6s ease;
+}*/
+.tongue{
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  transition: all .6s ease;
+}
+/*.container:hover .flipper{
+  transform-origin: top;
+  transform: rotateX(-20deg) rotateY(-180deg);
+}*/
+.slope{
+  transform-origin: top;
+  transform: rotateX(-20deg) rotateY(-180deg);
+}
+.slope__finish{
+  transform-origin: top;
+  transform: rotateX(0deg) rotateY(-180deg) scale(.6, .6);  
+}
+
+.main__image{
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 330px;
+  /*width: 500px;*/
+  /*max-width: 100%;*/
+  /*height: 332px;*/
+  transform-origin: top;
+  transform-style: preserve-3d;
+  /*transform: rotateX(-20deg) rotateY(-180deg);*/
+  /*transform: rotateX(20deg);*/
+/*   perspective: 1000;
+  -webkit-perspective: 1000;
+  -moz-transform: perspective(1000px);*/
+  /*z-index: 7;*/
+  z-index: 3;
+  /*transition: all 2s ease;*/
+/*  animation: animationOpener;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-play-state: paused;*/
+  /*transform: translateY(0%);*/
+}
+.main__image_target{
+  animation: animationOpener;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  /*z-index: 200;*/
+  animation-play-state: paused;
+}
+/*.image__pic{
+  width: 100%;
+  z-index: 11;
+  height: 330px;
+  position: absolute;
+  top: -331px;
+  left: 62px;
+  right: 62px;
+}*/
+.back:hover .main__image{
+  animation-play-state: running;
+}
+.back:hover{
+  z-index: 100;
+}
+/*.block__mouse_new{
+  z-index: 5;
+}*/
+.back:hover .block__mouse{
+  animation-play-state: running;
+}
+@keyframes animationOpener{
+  0%{
+    z-index: 7;
+    transform: translateY(0%);
+  }
+  49%{
+    z-index: 7;
+  }
+  50%{
+    z-index: 101;
+    transform: translateY(-100%);
+  }
+/*  60%{
+    z-index: 5;
+  }
+  87%{
+    z-index: 5;
+  }
+  88%{
+    z-index: 6;
+  }*/
+  100%{
+    z-index: 200;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes flapToDawn{
+  0%{
+    z-index: -5;
+  }
+  50%{
+    z-index: 1;
+  }
+  100%{
+    z-index: -1;
+  }
+}
